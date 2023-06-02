@@ -1,0 +1,3 @@
+-Cambiar el modo (oscuro y claro)con un toggle y emprolijar el codigo
+-Lista
+-Agregar cosas a la lista
