@@ -59,12 +59,12 @@ h1 {
 }
 
 #sun {
-  background-image: url("public/bg-desktop-light.jpg");
+  background-image: url("../../../public/bg-desktop-light.jpg");
   background-color: aliceblue;
 }
 
 #moon {
-  background-image: url("public/bg-desktop-dark.jpg");
+  background-image: url("../../../public/bg-desktop-dark.jpg");
   background-color: hsl(235, 21%, 11%);
 }
 
