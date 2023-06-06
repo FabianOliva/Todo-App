@@ -4,11 +4,14 @@
   align-items: center;
   margin-top: 3px;
   margin-bottom: 3px;
+  border-bottom: 1px solid;
+  min-height: 50px;
 }
 
 .crossIcon {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 .List_Items {
@@ -35,4 +38,11 @@
   height: 42%;
   position: absolute;
   left: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.List_Check img {
+  width: 13px;
+  height: 11px;
 }

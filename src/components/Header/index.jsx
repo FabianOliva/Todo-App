@@ -2,9 +2,8 @@ import "./index.css";
 import { useEffect, useState } from "react";
 import ListInput from "../ListInput";
 import List from "../List";
-import Todo from "../Todo";
 
-const Header = (props) => {
+const Header = ({ theme, setTheme }) => {
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -12,6 +11,9 @@ const Header = (props) => {
       completed: false,
     },
   ]);
+
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [filteredTodos, setFilteredTodos] = useState(todos);
 
   const addTodo = (title) => {
     const lastId = todos.length > 0 ? todos[todos.length - 1].id : 1;
@@ -38,6 +40,35 @@ const Header = (props) => {
     setTodos(updatedList);
   };
 
+  const handleClearComplete = () => {
+    const updatedList = todos.filter((todo) => !todo.completed);
+    setTodos(updatedList);
+  };
+
+  const showAllTodos = () => {
+    setActiveFilter("all");
+  };
+
+  const showActiveTodos = () => {
+    setActiveFilter("active");
+  };
+
+  const showCompletedTodos = () => {
+    setActiveFilter("completed");
+  };
+
+  useEffect(() => {
+    if (activeFilter === "all") {
+      setFilteredTodos(todos);
+    } else if (activeFilter === "active") {
+      const activeTodos = todos.filter((todo) => todo.completed === false);
+      setFilteredTodos(activeTodos);
+    } else if (activeFilter === "completed") {
+      const completedTodos = todos.filter((todo) => todo.completed === true);
+      setFilteredTodos(completedTodos);
+    }
+  }, [activeFilter, todos]);
+
   const handleDelete = (id) => {
     const updatedList = todos.filter((todo) => todo.id !== id);
     setTodos(updatedList);
@@ -45,22 +76,36 @@ const Header = (props) => {
 
   return (
     <header>
-      <div id={props.theme} className="header_Cont">
+      <div id={theme} className="header_Cont">
         <div className="header_top">
           <div className="header_Todo_Cont">
             <h1 className="header_title">TODO</h1>
           </div>
           <div className="header_themeButton_Cont">
             <button
-              className={`header_themeButton ${props.theme}`}
-              onClick={() => props.setTheme(props.theme === "sun" ? "moon" : "sun")}>
-              <img src={`/public/icon-${props.theme}.svg`} alt="" />
+              className={`header_themeButton ${theme}`}
+              onClick={() => {
+                if (theme === "sun") {
+                  setTheme("moon");
+                } else {
+                  setTheme("sun");
+                }
+              }}>
+              <img src={`/public/icon-${theme}.svg`} alt="" />
             </button>
           </div>
         </div>
         <div className="header_bottom">
-          <ListInput addTodo={addTodo} />
-          <List todos={todos} handleCompleted={handleCompleted} handleDelete={handleDelete}></List>
+          <ListInput addTodo={addTodo} theme={theme} />
+          <List
+            theme={theme}
+            todos={filteredTodos}
+            handleCompleted={handleCompleted}
+            handleDelete={handleDelete}
+            showAllTodos={showAllTodos}
+            showActiveTodos={showActiveTodos}
+            showCompletedTodos={showCompletedTodos}
+            handleClearComplete={handleClearComplete}></List>
         </div>
       </div>
     </header>
@@ -68,18 +113,3 @@ const Header = (props) => {
 };
 
 export default Header;
-
-/* <div className="">
-            <div className="">
-                <span className=""></span>
-            </div>
-            <input
-                className=""
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                onKeyDown={(e) => handleAddTodo(e)}
-                placeholder="What's next..."
-            />
-        </div>
-    ) */

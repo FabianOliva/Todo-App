@@ -2,4 +2,47 @@
   border-radius: 8px;
   padding: 10px;
   background-color: black;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.List_Filters {
+  display: flex;
+  min-height: 50px;
+  align-items: end;
+  justify-content: center;
+}
+
+.List_Filters_Left {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+.List_Filters_Filter {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 33%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.List_Filters_Filter-Item:hover {
+  color: white;
+}
+.List_Filters_Clear {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.List_Filters_Clear:hover {
+  color: white;
 }
