@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./index.css";
+import Cross from "../../../public/icon-cross.svg";
+import Check from "../../../public/icon-check.svg";
 
 const Todo = ({ todo, handleCompleted, handleDelete, theme }) => {
   const { id, title, completed } = todo;
@@ -14,7 +16,7 @@ const Todo = ({ todo, handleCompleted, handleDelete, theme }) => {
             className="List_Check completed"
             style={{ backgroundColor: theme === "sun" ? "hsl(235, 21%, 11%)" : "hsl(235, 21%, 11%)" }}
             onClick={() => handleCompleted(id)}>
-            <img src="public/icon-check.svg" alt="Check" />
+            <img src={Check} alt="Check" />
           </span>
         ) : (
           <span onClick={() => handleCompleted(id)} className="List_Check"></span>
@@ -23,7 +25,7 @@ const Todo = ({ todo, handleCompleted, handleDelete, theme }) => {
           {title}
         </p>
       </div>
-      <img onClick={() => handleDelete(id)} className="crossIcon" src="public/icon-cross.svg" alt="CrossIcon" />
+      <img onClick={() => handleDelete(id)} className="crossIcon" src={Cross} alt="CrossIcon" />
     </div>
   );
 };

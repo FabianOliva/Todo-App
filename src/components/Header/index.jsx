@@ -2,6 +2,8 @@ import "./index.css";
 import { useEffect, useState } from "react";
 import ListInput from "../ListInput";
 import List from "../List";
+import Moonbg from "../../../public/icon-moon.svg";
+import Lightbg from "../../../public/icon-sun.svg";
 
 const Header = ({ theme, setTheme }) => {
   const [todos, setTodos] = useState([
@@ -91,7 +93,7 @@ const Header = ({ theme, setTheme }) => {
                   setTheme("sun");
                 }
               }}>
-              <img src={`/public/icon-${theme}.svg`} alt="" />
+              <img src={theme === "sun" ? Lightbg : Moonbg} alt="" />
             </button>
           </div>
         </div>
