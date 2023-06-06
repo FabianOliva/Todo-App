@@ -4,6 +4,8 @@ import ListInput from "../ListInput";
 import List from "../List";
 import Moonbg from "../../../public/icon-moon.svg";
 import Lightbg from "../../../public/icon-sun.svg";
+import "../../../public/bg-desktop-dark.jpg";
+import "../../../public/bg-desktop-light.jpg";
 
 const Header = ({ theme, setTheme }) => {
   const [todos, setTodos] = useState([
