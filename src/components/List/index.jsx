@@ -1,5 +1,7 @@
 import "./index.css";
 import Todo from "../Todo";
+import "../../../public/bg-desktop-dark.jpg";
+import "../../../public/bg-desktop-light.jpg";
 
 const List = ({
   theme,
