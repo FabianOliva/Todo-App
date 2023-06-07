@@ -46,3 +46,10 @@
   width: 13px;
   height: 11px;
 }
+
+@media (max-width: 1150px) {
+  .crossIcon {
+    width: 18px;
+    height: 18px;
+  }
+}

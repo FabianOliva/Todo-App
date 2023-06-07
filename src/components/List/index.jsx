@@ -30,18 +30,24 @@ const List = ({
       })}
       <div className="List_Filters">
         <span className="List_Filters_Left">{`${itemCount} Items left`}</span>
-        <ul className="List_Filters_Filter">
-          <li className="List_Filters_Filter-Item" onClick={showAllTodos}>
+        <ul className={`List_Filters_Filter ${theme === "sun" ? "lightUl" : "darkUl"}`}>
+          <li className={`List_Filters_Filter-Item ${theme === "sun" ? "lightEl" : "darkEl"}`} onClick={showAllTodos}>
             All
           </li>
-          <li className="List_Filters_Filter-Item" onClick={showActiveTodos}>
+          <li
+            className={`List_Filters_Filter-Item ${theme === "sun" ? "lightEl" : "darkEl"}`}
+            onClick={showActiveTodos}>
             Active
           </li>
-          <li className="List_Filters_Filter-Item" onClick={showCompletedTodos}>
+          <li
+            className={`List_Filters_Filter-Item ${theme === "sun" ? "lightEl" : "darkEl"}`}
+            onClick={showCompletedTodos}>
             Completed
           </li>
         </ul>
-        <a className="List_Filters_Clear" onClick={() => handleClearComplete()}>
+        <a
+          className={`List_Filters_Clear ${theme === "sun" ? "lightEl" : "darkEl"}`}
+          onClick={() => handleClearComplete()}>
           Clear Completed
         </a>
       </div>

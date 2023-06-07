@@ -60,7 +60,7 @@ h1 {
 
 #sun {
   background-image: url("../../../public/bg-desktop-light.jpg");
-  background-color: aliceblue;
+  background-color: hsl(236, 33%, 92%);
 }
 
 #moon {
@@ -91,4 +91,32 @@ h1 {
   width: 30%;
   position: absolute;
   top: 35%;
+}
+
+@media (max-width: 1150px) {
+  .header_Cont {
+    height: 100vh;
+  }
+  .header_top {
+    width: 90%;
+    margin-top: 10%;
+  }
+  .header_bottom {
+    width: 90%;
+    top: 16%;
+  }
+
+  #sun {
+    background-image: url("../../../public/bg-mobile-light.jpg");
+    background-color: hsl(236, 33%, 92%);
+  }
+
+  #moon {
+    background-image: url("../../../public/bg-mobile-dark.jpg");
+    background-color: hsl(235, 21%, 11%);
+  }
+
+  .header_title {
+    font-size: 2rem;
+  }
 }

@@ -23,7 +23,7 @@ const ListInput = ({ addTodo, theme }) => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         onKeyDown={(e) => handleAddTodo(e)}
-        placeholder="What's next..."
+        placeholder="Create a new todo..."
         style={{
           backgroundColor: theme === "sun" ? "hsl(0, 0%, 98%)" : "hsl(235, 24%, 19%)",
           color: theme === "sun" ? "hsl(235, 21%, 11%)" : "rgba(255, 255, 255, 0.87)",

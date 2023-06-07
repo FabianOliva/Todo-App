@@ -33,9 +33,16 @@
   cursor: pointer;
 }
 
-.List_Filters_Filter-Item:hover {
-  color: white;
+.lightEl:hover {
+  color: grey;
+  font-weight: bold;
 }
+
+.darkEl:hover {
+  color: white;
+  font-weight: bold;
+}
+
 .List_Filters_Clear {
   width: 33%;
   display: flex;
@@ -43,6 +50,30 @@
   cursor: pointer;
 }
 
-.List_Filters_Clear:hover {
-  color: white;
+@media (max-width: 1150px) {
+  .List {
+    font-size: 0.8rem;
+  }
+
+  .List_Filters_Filter {
+    position: absolute;
+    bottom: -80px;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+  }
+
+  .List_Filters {
+    justify-content: space-around;
+  }
+
+  .lightUl {
+    background-color: hsl(0, 0%, 98%);
+  }
+  .darkUl {
+    background-color: hsl(235, 24%, 19%);
+  }
 }
